@@ -15,10 +15,23 @@ app.context.render = co.wrap(render({
     ext: 'html',
     writeBody: false
 }));
+
+
+
 app.use(router(_ => {
     _.get('/index', messages.home)
 
 }));
+
+app.use(router(_ => {
+    _.get('/create', messages.create)
+
+}));
+app.use(router(_ => {
+    _.get('/new', messages.createNew)
+
+}));
+
 app.use(convert(server(path.join(__dirname, './public'))));
 app.listen(3000, () => {
     console.log('服务已经启动')

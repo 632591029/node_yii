@@ -1,4 +1,31 @@
 {% extends 'layout.html' %} {% block title %}My Page{% endblock %} {% block head %} {% parent %}
 <link rel="stylesheet" href="styles/index.css"> {% endblock %} {% block content %}
-<p>{{msg}}</p>
-{% endblock %}
+
+
+
+
+
+
+
+<table class="table table-striped table-hover">
+
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">序号</th>
+            <th scope="col">标题</th>
+            <th scope="col">描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in msg %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.title }}</td>
+            <td>{{ item.describe }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a class="btn btn-primary" href="http://localhost:3000/create">
+    创建
+</a> {% endblock %}`
